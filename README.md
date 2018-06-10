@@ -2,7 +2,7 @@
 react-native-custom-input,一个自定义的输入组件    
 The final rendering
 ----
-![The final rendering](https://github.com/suwu150/static-resource/blob/master/images/react-native-string-distion.gif?raw=true)
+![The final rendering](https://github.com/suwu150/static-resource/blob/master/images/react-native-custom-input.gif?raw=true)
 
 Installation:  
 -------------------------------------- 
@@ -29,7 +29,8 @@ Props:
 
 |Props|Explain|type|require|default|          
 |:-------|:--------|:--------|:-------|:----------|
-|label|输入框的名称|string|no|文本输入框|       
+|label|输入框的名称|string|no|文本输入框|    
+|value|输入框的值|any|yes|''|    
 |labelTextStyle|输入框的名称的样式|string|no|{ width: 100,flexDirection: 'row',justifyContent: 'flex-end', alignItems: 'center',marginLeft: 15,}|     
 |required|是否显示必输标志|boolean|no|false|   
 |mode|输入框的模式，具体有简单输入框还是输入域|string|no|简单文本输入框，值为（'Input'，'TextArea'）两者之一|      

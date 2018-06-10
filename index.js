@@ -146,6 +146,7 @@ class Input extends Component {
         <View
           style={{
             height: 108,
+            width: '100%',
             paddingVertical: 10,
             paddingHorizontal: 15,
             borderColor: '#eae6e4',
