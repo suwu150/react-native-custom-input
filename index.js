@@ -24,6 +24,7 @@ class Input extends Component {
     textInputStyle: TextInput.propTypes.style,
     autoCapitalize: PropTypes.oneOf(['characters', 'words', 'sentences', 'none']),
     label: PropTypes.string,
+    placeholder: PropTypes.string,
   };
 
   static defaultProps = {
@@ -31,13 +32,14 @@ class Input extends Component {
     autoCapitalize: 'none',
     isUpdate: true,
     readonly: false,
-    label: '文本输入框'
+    label: '文本输入框',
+    placeholder: '请输入'
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      value: props.value,
+      value: props.value || '',
       textAlign: 'right'
     };
   }
