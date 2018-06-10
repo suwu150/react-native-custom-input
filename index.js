@@ -23,21 +23,15 @@ class Input extends Component {
     readonly: PropTypes.bool,
     textInputStyle: TextInput.propTypes.style,
     autoCapitalize: PropTypes.oneOf(['characters', 'words', 'sentences', 'none']),
+    label: PropTypes.string,
   };
 
   static defaultProps = {
-    labelTextStyle: {
-      fontSize: 14,
-      color: '#514b46'
-    },
     placeholderTextColor: '#ccc8c4',
-    textInputStyle: {
-      fontSize: 14,
-      color: '#332f2b'
-    },
     autoCapitalize: 'none',
     isUpdate: true,
-    readonly: false
+    readonly: false,
+    label: '文本输入框'
   };
 
   constructor(props) {
@@ -76,9 +70,9 @@ class Input extends Component {
   };
 
   _renderInputContent = () => {
-    const { textInputStyle, placeholderTextColor, autoCapitalize, isUpdate, readonly, suffix } = this.props;
+    const { textInputStyle, placeholderTextColor, autoCapitalize, isUpdate, suffix } = this.props;
     return (
-      (isUpdate && !readonly) ?
+      isUpdate ?
         <View
           style={[{ flexDirection: 'row', flex: 1, height: '100%' }, styles.center]}
         >
@@ -88,7 +82,7 @@ class Input extends Component {
             onBlur={this._onBlur}
             onFocus={this._onFocus}
             style={[{ textAlign: (this.state.value === 0 || this.state.value) ?
-              this.state.textAlign : 'left', flex: 1 }, textInputStyle]}
+              this.state.textAlign : 'left', flex: 1, fontSize: 14, color: '#332f2b' }, textInputStyle]}
             placeholderTextColor={placeholderTextColor}
             value={String(this.state.value)}
             autoCorrect={false}
@@ -115,8 +109,56 @@ class Input extends Component {
     );
   };
 
+  _renderTextAreaContent = () => {
+    const { textInputStyle, placeholderTextColor, autoCapitalize, isUpdate } = this.props;
+    return (
+      isUpdate ?
+        <TextInput
+          numberOfLines={4}
+          {...this.props}
+          multiline={true}
+          onChangeText={this._onChangeText}
+          onBlur={this._onBlur}
+          onFocus={this._onFocus}
+          style={[{ marginVertical: 5, height: 60, marginHorizontal: 10, textAlign: 'left', flex: 1, },
+            textInputStyle,
+          ]}
+          placeholderTextColor={placeholderTextColor}
+          value={String(this.state.value)}
+          autoCorrect={false}
+          autoCapitalize={autoCapitalize}
+          underlineColorAndroid="transparent"
+        /> :
+        <Text
+          style={[{ marginVertical: 5, height: 60, marginHorizontal: 10, textAlign: 'left', flex: 1,
+            backgroundColor: '#f7f6f5', }, textInputStyle]}
+        >{this.state.value}
+        </Text>
+    );
+  };
+
   render() {
-    const { label, labelTextStyle, required } = this.props;
+    const { label, labelTextStyle, required, mode } = this.props;
+    if (mode === 'TextArea') {
+      return (
+        <View
+          style={{
+            height: 108,
+            paddingVertical: 10,
+            paddingHorizontal: 15,
+            borderColor: '#eae6e4',
+            marginVertical: 5,
+            borderBottomWidth: 0.5,
+            backgroundColor: '#fff'
+          }}
+        >
+          <Text style={[{ fontSize: 15 }, labelTextStyle]}>
+            {label}{ required ? <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#F00' }}>*</Text> : null }
+          </Text>
+          { this._renderTextAreaContent() }
+        </View>
+      );
+    }
     return (
       <View
         style={[{
@@ -135,6 +177,8 @@ class Input extends Component {
             justifyContent: 'flex-end',
             alignItems: 'center',
             marginLeft: 15,
+            fontSize: 14,
+            color: '#514b46'
           },
           labelTextStyle,
         ]}

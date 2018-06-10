@@ -1,6 +1,6 @@
 {
   "name": "react-native-custom-input",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "react-native-custom-textInput，一个自定义的输入组件",
   "main": "index.js",
   "scripts": {

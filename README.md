@@ -19,8 +19,7 @@ import Input from react-native-custom-input;
    ...
   render() {
     return (
-        <TextInput
-        />
+        <Input />
     );
   }
 ```
@@ -30,12 +29,16 @@ Props:
 
 |Props|Explain|type|require|default|          
 |:-------|:--------|:--------|:-------|:----------|
-||the string that needs to be split|string|yes|''|       
-|delimiter|split string|string|no|no|     
-|style|container style|object|no|{ alignItems: 'flex-end' }|     
-|frontStyle|The style in the string before the split symbol|object|no|no|  
-|delimiterStyle|Split symbol style|object|no|no|     
-|behindStyle|The style behind the split symbol in the string|object|no|{}|     
+|label|输入框的名称|string|no|文本输入框|       
+|labelTextStyle|输入框的名称的样式|string|no|{ width: 100,flexDirection: 'row',justifyContent: 'flex-end', alignItems: 'center',marginLeft: 15,}|     
+|required|是否显示必输标志|boolean|no|false|   
+|mode|输入框的模式，具体有简单输入框还是输入域|string|no|简单文本输入框，值为（'Input'，'TextArea'）两者之一|      
+|textInputStyle|输入框的样式|object|no|{fontSize: 14, color: '#332f2b'}|  
+|isUpdate|是否可编辑，true为可编辑|boolean|no|true|     
+|suffix|输入框后面的后缀，值得注意的是length大于3的时候将不会显示|string|no|''，|
+|placeholderTextColor|占位符文字的颜色|string|no|'#ccc8c4'|     
+|autoCapitalize|首字母是否自动大写|string|no|'none'，只能是['characters', 'words', 'sentences', 'none']之一|     
+`注意： 由于输入框组件是在react-native官方组件的基础上进行封装，所以支持TextInput所有属性，在这里就不一一罗列`
 
 Examples from props:
 ```javascript
