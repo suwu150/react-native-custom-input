@@ -1,0 +1,26 @@
+{
+  "name": "react-native-custom-input",
+  "version": "1.0.4",
+  "description": "react-native-custom-textInput，一个自定义的输入组件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suwu150/react-native-string-distinction.git"
+  },
+  "keywords": [
+    "react-native",
+    "string",
+    "Text",
+    "react",
+    "textInput"
+  ],
+  "author": "jkwu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/suwu150/react-native-string-distinction/issues"
+  },
+  "homepage": "https://github.com/suwu150/react-native-string-distinction#readme"
+}
