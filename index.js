@@ -16,12 +16,9 @@ const styles = StyleSheet.create({
 
 class Input extends Component {
   static propTypes = {
-    inputStyle: TextInput.propTypes.style,
-    labelTextStyle: TextInput.propTypes.style,
     placeholderTextColor: PropTypes.string,
     isUpdate: PropTypes.bool,
     readonly: PropTypes.bool,
-    textInputStyle: TextInput.propTypes.style,
     autoCapitalize: PropTypes.oneOf(['characters', 'words', 'sentences', 'none']),
     label: PropTypes.string,
     placeholder: PropTypes.string,
