@@ -2,7 +2,7 @@
 react-native-custom-input,一个自定义的输入组件    
 The final rendering
 ----
-![The final rendering](https://github.com/suwu150/static-resource/blob/master/images/react-native-custom-input.gif?raw=true)
+![The final rendering](https://github.com/suwu150/react-native-custom-input/blob/master/react-native-custom-input.gif?raw=true)
 
 Installation:  
 -------------------------------------- 
